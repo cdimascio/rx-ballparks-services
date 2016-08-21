@@ -1,0 +1,36 @@
+{
+  "name": "rx-ballpark-services",
+  "version": "1.0.0",
+  "description": "get information about baseball parks",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "rm -rf dist; ./node_modules/.bin/babel lib -d dist && cp -R ./lib/data ./dist/data",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "baseball",
+    "watson",
+    "weather"
+  ],
+  "author": "Carmine DiMascio <cdimascio@gmail.com> (https://github.com/cdimascio)",
+  "license": "MIT",
+  "dependencies": {
+    "dbpedia-sparql-client": "^0.9.4",
+    "request-promise": "^4.1.1",
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdimascio/rx-ballparks-services.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cdimascio/rx-ballparks-services/issues"
+  },
+  "homepage": "https://github.com/cdimascio/rx-ballparks-services#readme"
+}
