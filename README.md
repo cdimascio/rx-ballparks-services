@@ -7,10 +7,11 @@ Weather Data is provided by Weather Company Data for IBM Bluemix
 ## Usage
 
 ###Initialize
-```
-import RxBaseballServices from 'rx-baseball-services';
 
-const rbs = RxBaseballServices({
+```
+import RxBallparkServices from 'rx-ballpark-services';
+
+const rbs = RxBallparkServices({
   weather: {
     apiRoot: <bluemix-weather-api-url>
   }
@@ -18,14 +19,16 @@ const rbs = RxBaseballServices({
 ```
 
 ###Initialize (try mode)
+
 *Bluemix account 'not required'*
 
 *Weather Company Data for IBM Bluemix 'not required'*
 
 
-```import RxBaseballServices from 'rx-baseball-services';
+```
+import RxBallparkServices from 'rx-ballpark-services';
 
-const rbs = RxBaseballServices({
+const rbs = RxBallparkServices({
   weather: {
     apiRoot: 'dummy',
     useMockData: true
@@ -34,17 +37,19 @@ const rbs = RxBaseballServices({
 ```
 
 ## Apis
+
 ### Fetch all ballparks with Weather
 
 ```
-BaseballServices.BallparksWeatherService
+rbs.BallparksWeatherService
       .all()
       .subscribe(r => /* do something */, /* handle error */);
 ```
+
 ### Fetch a ballpark by id
 
 ```
-BaseballServices.BallparksService
+rbs.BallparksService
   .byId(req.params.id)
   .subscribe(r => /* do something */, /* handle error */);
 ```
