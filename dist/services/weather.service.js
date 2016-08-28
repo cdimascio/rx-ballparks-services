@@ -33,11 +33,16 @@ var WeatherService = function () {
       var lon = _ref.lon;
       var lang = _ref.lang;
 
+      if (!this._apiRoot) {
+        throw Error('rx-ballparks-services configuration must specify weather api root');
+      }
       var qs = {
         units: units || 'm',
         geocode: lat + ',' + lon,
         language: lang || 'en-US'
       };
+
+      console.log('Fetching weather data', this._apiRoot + '/api/weather/v2/observations/current');
 
       return _rx2.default.Observable.fromPromise((0, _requestPromise2.default)({
         method: 'GET',

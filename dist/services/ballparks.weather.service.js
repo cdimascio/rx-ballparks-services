@@ -16,10 +16,6 @@ var _ballparks = require('./ballparks.service');
 
 var _ballparks2 = _interopRequireDefault(_ballparks);
 
-var _weather = require('./weather.service');
-
-var _weather2 = _interopRequireDefault(_weather);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29,10 +25,11 @@ var INTERVAL = 1000 * 60 * 60 * 1.5;
 var _cache = {};
 
 var BallparksWeatherService = function () {
-  function BallparksWeatherService(config) {
+  function BallparksWeatherService(config, weatherService) {
     _classCallCheck(this, BallparksWeatherService);
 
     this._useMockData = config.weather && config.weather.useMockData;
+    this._weatherService = weatherService;
     console.log('USE MOCK DATA', this._useMockData);
   }
 
@@ -65,9 +62,11 @@ var BallparksWeatherService = function () {
   }, {
     key: '_update',
     value: function _update() {
+      var _this2 = this;
+
       console.log('update weather data');
       return _ballparks2.default.all().flatMap(function (park) {
-        return _weather2.default.current({
+        return _this2._weatherService.current({
           lat: park.lat,
           lon: park.long,
           units: 'e'

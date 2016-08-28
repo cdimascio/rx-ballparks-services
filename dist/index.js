@@ -20,10 +20,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 module.exports = function RxBaseballServices(config) {
   console.log('CONFIG', config);
+  var weatherService = new _weather2.default(config);
   return {
     BallparksService: _ballparks2.default,
-    BallparksWeatherService: new _ballparksWeather2.default(config),
-    WeatherService: new _weather2.default(config),
+    BallparksWeatherService: new _ballparksWeather2.default(config, weatherService),
+    WeatherService: weatherService,
     DbPediaService: _dbpedia2.default
   };
 };

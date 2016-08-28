@@ -1,6 +1,6 @@
 {
   "name": "rx-ballpark-services",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "get information about baseball parks",
   "main": "dist/index.js",
   "scripts": {
