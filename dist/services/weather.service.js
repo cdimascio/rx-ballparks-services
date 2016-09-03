@@ -38,15 +38,14 @@ var WeatherService = function () {
       }
       var qs = {
         units: units || 'm',
-        geocode: lat + ',' + lon,
         language: lang || 'en-US'
       };
 
-      console.log('Fetching weather data', this._apiRoot + '/api/weather/v2/observations/current');
+      console.log('Fetching weather data', this._apiRoot + '/api/weather/v1/geocode/' + lat + '/' + lon + '/observations.json');
 
       return _rx2.default.Observable.fromPromise((0, _requestPromise2.default)({
         method: 'GET',
-        uri: this._apiRoot + '/api/weather/v2/observations/current',
+        uri: this._apiRoot + '/api/weather/v1/geocode/' + lat + '/' + lon + '/observations.json',
         qs: qs,
         json: true
       }));
