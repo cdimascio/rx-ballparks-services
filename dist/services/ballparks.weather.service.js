@@ -38,7 +38,7 @@ var BallparksWeatherService = function () {
     value: function all() {
       return _ballparks2.default.all().map(function (park) {
         return _extends({}, park, { weather: _cache[park.id] });
-      });
+      }).toArray();
     }
   }, {
     key: 'byId',
