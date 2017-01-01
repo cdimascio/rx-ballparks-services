@@ -8,7 +8,7 @@ Weather Data is provided by Weather Company Data for IBM Bluemix
 
 ###Initialize
 
-```
+```javascript
 import RxBallparkServices from 'rx-ballpark-services';
 
 const rbs = RxBallparkServices({
@@ -25,7 +25,7 @@ const rbs = RxBallparkServices({
 *Weather Company Data for IBM Bluemix 'not required'*
 
 
-```
+```javascript
 import RxBallparkServices from 'rx-ballpark-services';
 
 const rbs = RxBallparkServices({
@@ -40,7 +40,7 @@ const rbs = RxBallparkServices({
 
 ### Fetch all ballparks with Weather
 
-```
+```javascript
 rbs.BallparksWeatherService
       .all()
       .subscribe(r => /* do something */, /* handle error */);
@@ -48,7 +48,7 @@ rbs.BallparksWeatherService
 
 ### Fetch a ballpark by id
 
-```
+```javascript
 rbs.BallparksService
   .byId(req.params.id)
   .subscribe(r => /* do something */, /* handle error */);
